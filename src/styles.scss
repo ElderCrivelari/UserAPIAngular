@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.drop-shadow-dark {
+    filter:drop-shadow(1px 1px 1px rgba(36, 36, 36, 0.5));
+}
+.drop-shadow-light {
+    filter:drop-shadow(2px 2px 2px rgb(214, 214, 214));
+}
+.fa {
+  padding: 6px;
+  margin: 4px;
+  font-size: 60px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10%;
+}
+.fa-linkedin{
+  background: #007bb5;
+  color: white;
+}
+.fa-github{
+  background: white;
+  color: black;
+}

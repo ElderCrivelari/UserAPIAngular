@@ -1,0 +1,23 @@
+<div class="d-flex container justify-content-around align-items-center h-75 w-75">
+    <div class="col text-end pe-4 drop-shadow-dark">
+      <h1>Acesse o sistema:</h1>
+      <p>Para acessar, digite os dados ao lado:</p>
+      
+    </div>
+    <div class="col box-login text-dark">
+        <form [formGroup]="formLogin">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label ">Email</label>
+              <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp" formControlName="email">
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label ">Senha</label>
+              <input type="password" class="form-control" id="loginPassword" formControlName="password">
+            </div>
+            <div class="d-flex justify-content-around align-items-center">
+              <button type="submit" class="btn btn-primary w-50" [disabled]="formLogin.invalid"(click)="debug('Login Redirecionado!')">Acessar</button>
+              <a href="#">Não possuo cadastro</a>
+            </div>
+          </form>
+    </div>
+</div>

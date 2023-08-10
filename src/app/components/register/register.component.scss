@@ -1,0 +1,14 @@
+body{
+    height: calc(100vh);
+}
+.box-login{
+    background-color: rgb(216, 216, 216);
+    border-style:solid;
+    border-width: 2px;
+    border-color: rgb(197, 197, 197);
+    filter: drop-shadow(2px 2px 4px rgb(94, 94, 94));
+    border-radius: 2%;
+}
+.box-login form{
+    margin: 20px;
+}

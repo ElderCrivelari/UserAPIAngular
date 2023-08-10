@@ -1,0 +1,26 @@
+<div class="d-flex container justify-content-around align-items-center h-75 w-75">
+    <div class="col text-end pe-4 drop-shadow-dark">
+      <h1>Cadastre-se:</h1>
+      <p>Para acessar, digite os dados ao lado:</p>
+      
+    </div>
+    <div class="col box-login text-dark">
+        <form [formGroup]="formRegister" (ngSubmit)="debug('Submitted com sucesso')" >
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label ">Nome:</label>
+              <input type="text" class="form-control" id="registerName" aria-describedby="emailHelp" formControlName="name">
+            </div>
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label ">Email</label>
+              <input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" formControlName="email">
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label ">Senha</label>
+              <input type="password" class="form-control" id="registerPassword" formControlName="password">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary w-50" [disabled]="formRegister.invalid">Cadastrar</button>
+            </div>
+          </form>
+    </div>
+</div>

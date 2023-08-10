@@ -1,0 +1,21 @@
+<div class="table-responsive" >
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let users of responseData" class="">
+                <td scope="row">{{users.id}}</td>
+                <td>{{users.name}}</td>
+                <td>{{users.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
