@@ -13,8 +13,8 @@ export class RegisterComponent implements OnInit {
  
   constructor(private formBuilder: FormBuilder,private apiService: ApiService){}
 
-  getApiData(){
-    this.apiService.get('v1/users').subscribe((data) => {this.responseData = data;});
+  postApiData(){
+     this.createDataModel()
   }
   
 
