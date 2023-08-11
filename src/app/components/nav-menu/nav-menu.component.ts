@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,9 +6,5 @@ import { NavigationService } from 'src/app/services/navigation.service';
   styleUrls: ['./nav-menu.component.scss']
 })
 export class NavMenuComponent {
-constructor (private navigationService: NavigationService){}
-
-onClickGoToPage(pageName: string) {
-    this.navigationService.goToPage(pageName);
-  }
+constructor (){}
 }

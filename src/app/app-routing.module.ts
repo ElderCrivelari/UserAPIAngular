@@ -7,6 +7,7 @@ import { IndexComponent } from './components/index/index.component';
 
 const routes: Routes = [
   {path:'',component:IndexComponent},
+  {path:'Index',component:IndexComponent},
   {path:'Login', component:LoginComponent},
   {path:'Cadastrar', component:RegisterComponent},
   {path:'Usuarios', component:UsersComponent}
