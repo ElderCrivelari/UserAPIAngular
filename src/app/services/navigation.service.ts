@@ -8,7 +8,11 @@ export class NavigationService {
 
   constructor(private router: Router) { }
 
-  goToPage(pageName: string) {
-    this.router.navigate([`/${pageName}`]);
+  goToPage(pageName: string,optionalParam?: string) {
+    let routeParams:any = { };
+    if(optionalParam){
+      routeParams['uId'] = optionalParam;
+    }
+    this.router.navigate([`/${pageName}`],{queryParams:routeParams});
   }
 }

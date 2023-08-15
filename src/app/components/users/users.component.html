@@ -1,20 +1,39 @@
-<div class="table-responsive" >
-    <table class="table table-primary">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let users of responseData" class="">
-                <td scope="row">{{users.id}}</td>
-                <td>{{users.name}}</td>
-                <td>{{users.email}}</td>
-            </tr>
-        </tbody>
-    </table>
+<div *ngIf="infoVisible" class="alert alert-dismissible fade show" [ngClass]="infoType" role="alert">
+  <strong>{{infoTitle }}</strong> {{ infoText }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar Alerta"></button>
+</div>
+
+<div class="container-fluid justify-content-center text-center mt-2">
+    <h1>Bem vindo(a) {{responseData.name}} ! </h1>
+</div>
+<div class="container-fluid justify-content-center align-items-center pb-5">
+    <div class="col">
+        <p>Você pode editar seus dados </p>
+        <p>Quando terminar, pode clicar em "Salvar" para salvar os dados</p>
+    </div>
+    <div class="col">
+        <form [formGroup]="formUser">
+            <div class="mb-3">
+              <label for="userName" class="form-label ">Nome</label>
+              <input type="text" class="form-control" id="userName" aria-describedby="Nome" formControlName="name" value={{responseData.name}}>
+            </div>
+            <div class="mb-3">
+              <label for="userEmail" class="form-label ">Email</label>
+              <input type="email" class="form-control" id="userEmail" aria-describedby="Email" formControlName="email" value={{responseData.email}}>
+            </div>
+            <div class="mb-3">
+              <label for="userPassword" class="form-label ">Senha</label>
+              <input type="password" class="form-control" id="userPassword"  aria-describedby="senha" formControlName="password" value={{responseData.password}}>
+            </div>
+            <div class="mb-3">
+              <label for="userCdate" class="form-label ">Data do Cadastro</label>
+              <input type="text" class="form-control" id="userCdate" aria-describedby="Data do Cadastro" formControlName="cDate" value={{responseData.creationDate}}>
+            </div>
+            <div class="d-flex justify-content-around align-items-center">
+              <button type="submit" class="btn btn-primary w-50" [disabled]="formUser.invalid" (click)="putModelData(responseData.id)" >Salvar</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 

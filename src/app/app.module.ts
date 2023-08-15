@@ -11,7 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { HttpClientModule } from '@angular/common/http';
-import { IndexComponent } from './components/index/index.component'
+import { IndexComponent } from './components/index/index.component';
+import { InfoMessageComponent } from './components/info-message/info-message.component'
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { IndexComponent } from './components/index/index.component'
     FooterComponent,
     RegisterComponent,
     UsersComponent,
-    IndexComponent
+    IndexComponent,
+    InfoMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { IndexComponent } from './components/index/index.component'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

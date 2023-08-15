@@ -1,11 +1,16 @@
-<div class="d-flex container justify-content-around align-items-center h-75 w-75">
+<div *ngIf="infoVisible" class="alert alert-dismissible fade show" [ngClass]="infoType" role="alert">
+  <strong>{{infoTitle }}</strong> {{ infoText }}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar Alerta"></button>
+</div>
+
+<div class="d-flex container justify-content-around align-items-center h-75 w-75 p-5">
     <div class="col text-end pe-4 drop-shadow-dark">
-      <h1>Cadastre-se:</h1>
-      <p>Para acessar, digite os dados ao lado:</p>
+      <h1>Cadastre-se!</h1>
+      <p>Digite seus dados ao lado:</p>
       
     </div>
     <div class="col box-login text-dark">
-        <form [formGroup]="formRegister" (ngSubmit)="debug('Submitted com sucesso')" >
+        <form [formGroup]="formRegister" >
             <div class="mb-3">
               <label for="loginEmail" class="form-label ">Nome:</label>
               <input type="text" class="form-control" id="registerName" aria-describedby="emailHelp" formControlName="name">
@@ -19,7 +24,7 @@
               <input type="password" class="form-control" id="registerPassword" formControlName="password">
             </div>
             <div class="text-center">
-                <button type="submit" class="btn btn-primary w-50" [disabled]="formRegister.invalid">Cadastrar</button>
+                <button type="submit" class="btn btn-primary w-50" [disabled]="formRegister.invalid" (click)="postModelData()">Cadastrar</button>
             </div>
           </form>
     </div>
